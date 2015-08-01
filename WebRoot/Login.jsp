@@ -46,6 +46,7 @@
 					<li><a href="./new.jsp">最新</a></li>
 					<li><a href="./hot.jsp">热门</a></li>
 					<li><a href="./recommend.jsp">我要推荐</a></li>
+					
 				</ul>
 
 

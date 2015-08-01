@@ -53,7 +53,6 @@
 					<li><a href="./new.jsp">最新</a></li>
 					<li><a href="./hot.jsp">热门</a></li>
 					<li><a href="./recommend.jsp">我要推荐</a></li>
-
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right navbar_user">
@@ -61,19 +60,13 @@
 
 
 						<%
-						session.putValue("username", "ssss");
 							if(session.getAttribute("username")==null) {
 						%>
 						<a href="./Login.jsp">登录</a> <a href="./reg.jsp">注册</a>
 						<%
 							}
-							else {
-
-							
-							
-							
-							out.print("<div style=\"color:white\">"+(String)session.getAttribute("username")+"</div>"+"<a href=\"./\">注销</a>");
-							
+							else {	
+							out.print("<div style=\"color:white\">"+(String)session.getAttribute("username")+"</div>"+"<a href=\"./\">注销</a>");				
 							}
 						%>
 
