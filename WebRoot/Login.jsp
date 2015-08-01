@@ -41,7 +41,7 @@
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-				
+
 					<li><a href="./">首页</a></li>
 					<li><a href="./new.jsp">最新</a></li>
 					<li><a href="./hot.jsp">热门</a></li>
@@ -123,7 +123,7 @@
 
 				<ul class="nav navbar-nav navbar-right navbar_user">
 					<div class="hum">
-						<a href="/set/login/">登录</a> <a href="/set/reg/">注册</a>
+						<a href="./Login.jsp">登录</a> <a href="./reg.jsp">注册</a>
 					</div>
 				</ul>
 			</div>
@@ -152,17 +152,19 @@
 			</div>
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
+				
 					<button class="btn btn-primary btn-sm" type="button"
 						onclick="javascript:login()">登录</button>
+						
 				</div>
 			</div>
 			<div class="form-group" style="padding-top:20px;">
 				<div class="col-sm-offset-2 col-sm-10">
 					<p>
-						<a href="/set/reg">没有账号？注册一个</a>
+						<a href="./reg.jsp">没有账号？注册一个</a>
 					</p>
 					<p>
-						<a href="/set/resetpass">忘记密码？找回密码</a>
+						<a href="mailto:qiaowen0@live.com">忘记密码？请发邮件给我。</a>
 					</p>
 				</div>
 			</div>
@@ -170,44 +172,6 @@
 
 	</div>
 
-	<script type="text/javascript">
-		function login() {
-			var send = {
-				email : "",
-				pwd : ""
-			};
-			send.email = $("#email").val();
-			send.pwd = $("#pwd").val();
-			$.ajax({
-				type : "POST",
-				url : "/ajax/login_ajax",
-				cache : true,
-				dataType : "json",
-				data : send,
-				success : function(data) {
-					if (data.success == true) {
-						window.location.href = "/";
-					} else {
-						alert(data.msg);
-					}
-				},
-				error : function(data) {
-					alert("抱歉！出错了！");
-				}
-			});
-		}
-	</script>
-	<script>
-		$(document).ready(function() {
-			$('.tooltips').tooltipster();
-		});
-	</script>
-
-	<script>
-		$(function() {
-			$('[data-toggle="tooltip"]').tooltip()
-		})
-	</script>
 
 	<div style="clear:both;margin-bottom:120px;"></div>
 
@@ -216,8 +180,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 hidden-xs">
-					<a href="./" target="_blank">图书推荐-qiaowen0</a>
-					创建于2015.8.1
+					<a href="./" target="_blank">图书推荐-qiaowen0</a> 创建于2015.8.1
 				</div>
 				<div class="col-md-4 text-right">
 					<a href="mailto:qiaowen0@live.com" target="_blank">联系我们</a>
@@ -226,18 +189,7 @@
 		</div>
 	</div>
 
-	<script type="text/javascript"
-		src="http://tajs.qq.com/stats?sId=48520004" charset="UTF-8"></script>
-	<div style="display:none">
-		<script type="text/javascript">
-			var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://"
-					: " http://");
-			document
-					.write(unescape("%3Cscript src='"
-							+ _bdhmProtocol
-							+ "hm.baidu.com/h.js%3F36f45ef10337991c93242d418c95baa3' type='text/javascript'%3E%3C/script%3E"));
-		</script>
-	</div>
+
 
 </body>
 </html>
