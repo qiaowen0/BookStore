@@ -2,8 +2,8 @@
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
-			+ request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
+	+ request.getServerName() + ":" + request.getServerPort()
+	+ path + "/";
 %>
 
 
@@ -43,21 +43,41 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/">图书推荐</a>
+				<a class="navbar-brand" href="./">图书推荐</a>
 			</div>
 
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="/">首页</a></li>
+					<li class="active"><a href="./">首页</a></li>
 					<li><a href="./new.jsp">最新</a></li>
 					<li><a href="./hot.jsp">热门</a></li>
 					<li><a href="./recommend.jsp">我要推荐</a></li>
+
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right navbar_user">
 					<div class="hum">
+
+
+						<%
+						session.putValue("username", "ssss");
+							if(session.getAttribute("username")==null) {
+						%>
 						<a href="./Login.jsp">登录</a> <a href="./reg.jsp">注册</a>
+						<%
+							}
+							else {
+
+							
+							
+							
+							out.print("<div style=\"color:white\">"+(String)session.getAttribute("username")+"</div>"+"<a href=\"./\">注销</a>");
+							
+							}
+						%>
+
+
 					</div>
 				</ul>
 			</div>
@@ -100,7 +120,7 @@
 
 
 		<div style="clear:both;margin-bottom:100px;"></div>
-</div>
+	</div>
 
 	</div>
 
@@ -118,19 +138,19 @@
 
 
 
-	<div id="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 hidden-xs">
-					<a href="./" target="_blank">图书推荐-qiaowen0</a> 创建于2015.8.1
-				</div>
-				<div class="col-md-4 text-right">
-					<a href="mailto:qiaowen0@live.com" target="_blank">联系我们</a>
-				</div>
+<div id="footer">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 hidden-xs">
+				<a href="./" target="_blank">图书推荐-qiaowen0</a> 创建于2015.8.1
+			</div>
+			<div class="col-md-4 text-right">
+				<a href="mailto:qiaowen0@live.com" target="_blank">联系我们</a>
 			</div>
 		</div>
 	</div>
-	
+</div>
+
 
 
 

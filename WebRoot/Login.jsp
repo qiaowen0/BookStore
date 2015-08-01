@@ -49,64 +49,7 @@
 				</ul>
 
 
-				<script type="text/javascript">
-					$(document)
-							.ready(
-									function() {
 
-										$("#sn")
-												.on(
-														'input',
-														function(e) {
-															var send = {
-																con : ""
-															};
-															send.con = $("#sn")
-																	.val();
-
-															if (send.con == "") {
-																$(
-																		'.dropdown-menu-search2')
-																		.hide();
-															}
-
-															$
-																	.ajax({
-																		type : "POST",
-																		url : "/ajax/search_ajax",
-																		cache : true,
-																		dataType : "json",
-																		data : send,
-																		success : function(
-																				data) {
-																			if (data.success == true) {
-																				if (data.text != "") {
-																					$(
-																							'.dropdown-menu-search2')
-																							.show();
-																					$(
-																							'.dropdown-menu-search2')
-																							.html(
-																									data.text);
-																				} else {
-																					$(
-																							'.dropdown-menu-search2')
-																							.hide();
-																				}
-																			} else {
-																			}
-																		}
-																	});
-														});
-
-										$("#sn").blur(
-												function() {
-													$('.dropdown-menu-search2')
-															.delay(100).hide(
-																	100);
-												});
-									});
-				</script>
 
 				<div class="navbar-form navbar-left" role="search">
 					<div class="input-group input-group-sm btn-group">
@@ -134,6 +77,7 @@
 	<div class="container">
 
 		<h2 class="text-center" style="padding-top:30px;">登录</h2>
+
 
 		<form class="form-horizontal form-login" role="form">
 			<div class="form-group">
