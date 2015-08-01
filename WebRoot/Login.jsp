@@ -35,18 +35,17 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/">Sub HD</a>
+				<a class="navbar-brand" href="./">图书推荐</a>
 			</div>
 
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 				
-					<li><a href="/">首页</a></li>
+					<li><a href="./">首页</a></li>
 					<li><a href="/subs">最新</a></li>
 					<li><a href="/subs/top">热门</a></li>
-					<li><a href="/forum">讨论区</a></li>
-					<li><a href="/upload">上传</a></li>
+					<li><a href="/recommend">我要推荐</a></li>
 				</ul>
 
 
@@ -112,11 +111,11 @@
 				<div class="navbar-form navbar-left" role="search">
 					<div class="input-group input-group-sm btn-group">
 						<input type="text" class="form-control" style="width:180px"
-							id="sn" placeholder="影视名称">
+							id="sn" placeholder="图书名称">
 						<ul class="dropdown-menu dropdown-menu-search2" role="menu"></ul>
 						<span class="input-group-btn">
 							<button type="button" class="btn btn-default btn-sm"
-								id="searchbutton" onclick="javascript:search()">搜索字幕</button>
+								id="searchbutton" onclick="javascript:search()">搜索图书</button>
 						</span>
 					</div>
 				</div>
@@ -217,13 +216,11 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 hidden-xs">
-					<a href="http://subhd.com" target="_blank">SubHD.com</a>
-					成立于2014年11月 0.0046
+					<a href="./" target="_blank">图书推荐-qiaowen0</a>
+					创建于2015.8.1
 				</div>
 				<div class="col-md-4 text-right">
-					<a href="/feed" target="_blank">RSS订阅</a>[<a href="/feed/feedmovie"
-						target="_blank">电影</a>|<a href="/feed/feedtv" target="_blank">电视</a>]
-					| <a href="mailto:subhdinfo@gmail.com" target="_blank">联系我们</a>
+					<a href="mailto:qiaowen0@live.com" target="_blank">联系我们</a>
 				</div>
 			</div>
 		</div>
