@@ -43,9 +43,9 @@
 				<ul class="nav navbar-nav">
 				
 					<li><a href="./">首页</a></li>
-					<li><a href="/subs">最新</a></li>
-					<li><a href="/subs/top">热门</a></li>
-					<li><a href="/recommend">我要推荐</a></li>
+					<li><a href="./new.jsp">最新</a></li>
+					<li><a href="./hot.jsp">热门</a></li>
+					<li><a href="./recommend.jsp">我要推荐</a></li>
 				</ul>
 
 
