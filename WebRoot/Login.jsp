@@ -35,7 +35,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/">Sub HD</a>
+				<a class="navbar-brand" href="/">图书推荐网</a>
 			</div>
 
 			<div class="collapse navbar-collapse"
@@ -45,8 +45,7 @@
 					<li><a href="/">首页</a></li>
 					<li><a href="/subs">最新</a></li>
 					<li><a href="/subs/top">热门</a></li>
-					<li><a href="/forum">讨论区</a></li>
-					<li><a href="/upload">上传</a></li>
+					<li><a href="/upload">我要推荐</a></li>
 				</ul>
 
 
@@ -109,17 +108,7 @@
 									});
 				</script>
 
-				<div class="navbar-form navbar-left" role="search">
-					<div class="input-group input-group-sm btn-group">
-						<input type="text" class="form-control" style="width:180px"
-							id="sn" placeholder="影视名称">
-						<ul class="dropdown-menu dropdown-menu-search2" role="menu"></ul>
-						<span class="input-group-btn">
-							<button type="button" class="btn btn-default btn-sm"
-								id="searchbutton" onclick="javascript:search()">搜索字幕</button>
-						</span>
-					</div>
-				</div>
+
 
 
 				<ul class="nav navbar-nav navbar-right navbar_user">
@@ -153,8 +142,11 @@
 			</div>
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
+				
 					<button class="btn btn-primary btn-sm" type="button"
+					
 						onclick="javascript:login()">登录</button>
+						
 				</div>
 			</div>
 			<div class="form-group" style="padding-top:20px;">
@@ -213,12 +205,14 @@
 	<div style="clear:both;margin-bottom:120px;"></div>
 
 
+
+
 	<div id="footer">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 hidden-xs">
-					<a href="http://subhd.com" target="_blank">SubHD.com</a>
-					成立于2014年11月 0.0046
+					<a href="。/index.jsp" target="_blank">图书推荐网</a>
+					创立于2015.8.1
 				</div>
 				<div class="col-md-4 text-right">
 					<a href="/feed" target="_blank">RSS订阅</a>[<a href="/feed/feedmovie"
