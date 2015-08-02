@@ -27,7 +27,6 @@
 </head>
 
 <body>
-
 	<nav class="navbar navbar-inverse" role="navigation">
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
@@ -71,6 +70,8 @@
 		</div>
 	</nav>
 
+
+	<div style="clear:both;margin-bottom:120px;"></div>
 	<div id="footer">
 		<div class="container">
 			<div class="row">
