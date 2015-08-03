@@ -50,9 +50,9 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="./">首页</a></li>
-					<li><a href="./new.jsp">最新</a></li>
-					<li><a href="./hot.jsp">热门</a></li>
-					<li><a href="./recommend.jsp">我要推荐</a></li>
+					<li><a href="./new">最新</a></li>
+					<li><a href="./hot">热门</a></li>
+					<li><a href="./recommend">我要推荐</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right navbar_user">
@@ -62,7 +62,7 @@
 						<%
 							if(session.getAttribute("username")==null) {
 						%>
-						<a href="./Login.jsp">登录</a> <a href="./reg.jsp">注册</a>
+						<a href="./login">登录</a> <a href="./reg">注册</a>
 						<%
 							}
 							else {	

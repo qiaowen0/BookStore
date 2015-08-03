@@ -42,10 +42,11 @@
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 
-					<li><a href="./">首页</a></li>
-					<li><a href="./new.jsp">最新</a></li>
-					<li><a href="./hot.jsp">热门</a></li>
-					<li><a href="./recommend.jsp">我要推荐</a></li>
+					<li class="active"><a href="./">首页</a></li>
+					<li><a href="./new">最新</a></li>
+					<li><a href="./hot">热门</a></li>
+					<li><a href="./recommend">我要推荐</a></li>
+				</ul>
 					
 				</ul>
 
@@ -67,7 +68,7 @@
 
 				<ul class="nav navbar-nav navbar-right navbar_user">
 					<div class="hum">
-						<a href="./Login.jsp">登录</a> <a href="./reg.jsp">注册</a>
+						<a href="./login">登录</a><a href="./reg">注册</a>
 					</div>
 				</ul>
 			</div>
@@ -106,7 +107,7 @@
 			<div class="form-group" style="padding-top:20px;">
 				<div class="col-sm-offset-2 col-sm-10">
 					<p>
-						<a href="./reg.jsp">没有账号？注册一个</a>
+						<a href="./reg">没有账号？注册一个</a>
 					</p>
 					<p>
 						<a href="mailto:qiaowen0@live.com">忘记密码？请发邮件给我。</a>

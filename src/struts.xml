@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
+	<package name="default" extends="struts-default">
 
+
+		<action name="index">
+			<result>index.jsp</result>
+		</action>
+		<action name="hot">
+			<result>hot.jsp</result>
+		</action>
+		<action name="login">
+			<result>Login.jsp</result>
+		</action>
+		<action name="new">
+			<result>new.jsp</result>
+		</action>
+		<action name="recommend">
+			<result>recommend.jsp</result>
+		</action>
+		<action name="reg">
+			<result>reg.jsp</result>
+		</action>
+		<action name="search_results">
+			<result>search_results.jsp</result>
+		</action>
+
+
+	</package>
 </struts>    

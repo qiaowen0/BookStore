@@ -6,6 +6,7 @@
 			+ path + "/";
 %>
 
+
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -44,10 +45,12 @@
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="./">首页</a></li>
-					<li><a href="./new.jsp">最新</a></li>
-					<li><a href="./hot.jsp">热门</a></li>
-					<li><a href="./recommend.jsp">我要推荐</a></li>
+				
+					<li class="active"><a href="./">首页</a></li>
+					<li><a href="./new">最新</a></li>
+					<li><a href="./hot">热门</a></li>
+					<li><a href="./recommend">我要推荐</a></li>
+					
 				</ul>
 				<div class="navbar-form navbar-left" role="search">
 					<div class="input-group input-group-sm btn-group">
@@ -64,12 +67,65 @@
 
 				<ul class="nav navbar-nav navbar-right navbar_user">
 					<div class="hum">
-						<a href="./Login.jsp">登录</a> <a href="./reg.jsp">注册</a>
+						<a href="./login">登录</a> <a href="./reg">注册</a>
 					</div>
 				</ul>
+				
 			</div>
 		</div>
 	</nav>
+
+
+
+	<div class="container">
+
+		<h2 class="text-center" style="padding-top:30px;">图书推荐</h2>
+
+		<form class="form-horizontal form-login"  name="regForm" role="form">
+			<div class="form-group">
+				<label for="email" class="col-sm-3 control-label">邮箱</label>
+				<div class="col-sm-9">
+					<input type="email" class="form-control" name="email" id="email"
+						placeholder="登录邮箱地址"> <span class="help-block">请填写真实邮箱，否则无法找回密码</span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="name" class="col-sm-3 control-label">昵称</label>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" name="name" id="name"
+						placeholder="昵称"> <span class="help-block">注册成功后不可更改</span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="pwd" class="col-sm-3 control-label">密码</label>
+				<div class="col-sm-9">
+					<input type="password" class="form-control" id="pwd" name="pwd"
+						placeholder="登录密码"> <span class="help-block">您的登录密码</span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="pwd2" class="col-sm-3 control-label">重复密码</label>
+				<div class="col-sm-9">
+					<input type="password" class="form-control" id="pwd2" name="pwd2"
+						placeholder="重复密码">
+				</div>
+			</div>
+			<div class="form-group" style="margin-top:50px;">
+				<div class="col-sm-offset-3 col-sm-9">
+					<button class="btn btn-primary btn-sm" style="width:100%;"
+						type="button" id="regb" onclick="javascript:submitReg()">提交注册</button>
+				</div>
+			</div>
+
+		</form>
+
+	</div>
+
+
+
+
+	<div style="clear:both;margin-bottom:120px;"></div>
+
 
 	<div id="footer">
 		<div class="container">
