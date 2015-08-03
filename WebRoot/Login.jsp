@@ -166,7 +166,7 @@
 				alert("请输入密码");
 				document.loginForm.pwd.focus();
 			} else {
-				document.loginForm.action = "user_login";
+				document.loginForm.action = "./user_login";
 				document.loginForm.submit();
 			}
 		}

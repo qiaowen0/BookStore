@@ -1,8 +1,10 @@
 package com.bookstore.action;
+
 import com.opensymphony.xwork2.ActionSupport;
-public class User_register extends ActionSupport {
+
+public class UserRegister extends ActionSupport {
 	public String execute() throws Exception {
-		// ×¢Ïú
-		return SUCCESS;
+		return "reg_fail";
 	}
+
 }

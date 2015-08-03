@@ -27,7 +27,6 @@
 		<action name="profile">
 			<result>profile.jsp</result>
 		</action>
-		
 		<action name="user_logout" class="com.bookstore.action.Logout">
 			<result>index.jsp</result>
 		</action>
@@ -37,7 +36,8 @@
 		</action>
 
 
-		<action name="user_register" class="com.bookstore.action.User_register">
+		<action name="User_reg" class="com.bookstore.action.UserRegister">
+		<result name="reg_fail">Login.jsp</result>
 			<result>profile.jsp</result>
 		</action>
 
