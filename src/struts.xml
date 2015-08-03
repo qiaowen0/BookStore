@@ -3,7 +3,6 @@
 <struts>
 	<package name="default" extends="struts-default">
 
-
 		<action name="index">
 			<result>index.jsp</result>
 		</action>
@@ -24,6 +23,9 @@
 		</action>
 		<action name="search_results">
 			<result>search_results.jsp</result>
+		</action>
+		<action name="user_logout" class="com.bookstore.action.Logout">
+			<result>reg.jsp</result>
 		</action>
 
 

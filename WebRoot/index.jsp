@@ -2,8 +2,8 @@
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
-	+ request.getServerName() + ":" + request.getServerPort()
-	+ path + "/";
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
 %>
 
 
@@ -60,13 +60,15 @@
 
 
 						<%
-							if(session.getAttribute("username")==null) {
+						session.setAttribute("username", "aaa");
+							if (session.getAttribute("username") == null) {
 						%>
 						<a href="./login">登录</a> <a href="./reg">注册</a>
 						<%
-							}
-							else {	
-							out.print("<div style=\"color:white\">"+(String)session.getAttribute("username")+"</div>"+"<a href=\"./\">注销</a>");				
+							} else {
+								out.print("<div style=\"color:white\">"
+										+ (String) session.getAttribute("username") + "</div>"
+										+ "<a href=\"./user_logout\">注销</a>");
 							}
 						%>
 

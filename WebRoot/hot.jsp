@@ -63,7 +63,17 @@
 
 				<ul class="nav navbar-nav navbar-right navbar_user">
 					<div class="hum">
+						<%
+							if (session.getAttribute("username") == null) {
+						%>
 						<a href="./login">登录</a> <a href="./reg">注册</a>
+						<%
+							} else {
+								out.print("<div style=\"color:white\">"
+										+ (String) session.getAttribute("username") + "</div>"
+										+ "<a href=\"./user_logout\">注销</a>");
+							}
+						%>
 					</div>
 				</ul>
 			</div>

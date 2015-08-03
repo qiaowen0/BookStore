@@ -47,7 +47,7 @@
 					<li><a href="./hot">热门</a></li>
 					<li><a href="./recommend">我要推荐</a></li>
 				</ul>
-					
+
 				</ul>
 
 
@@ -68,7 +68,17 @@
 
 				<ul class="nav navbar-nav navbar-right navbar_user">
 					<div class="hum">
-						<a href="./login">登录</a><a href="./reg">注册</a>
+						<%
+							if (session.getAttribute("username") == null) {
+						%>
+						<a href="./login">登录</a> <a href="./reg">注册</a>
+						<%
+							} else {
+								out.print("<div style=\"color:white\">"
+										+ (String) session.getAttribute("username") + "</div>"
+										+ "<a href=\"./user_logout\">注销</a>");
+							}
+						%>
 					</div>
 				</ul>
 			</div>
@@ -98,10 +108,10 @@
 			</div>
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
-				
+
 					<button class="btn btn-primary btn-sm" type="button"
 						onclick="javascript:login()">登录</button>
-						
+
 				</div>
 			</div>
 			<div class="form-group" style="padding-top:20px;">
