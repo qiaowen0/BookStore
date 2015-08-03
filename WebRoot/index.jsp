@@ -60,7 +60,6 @@
 
 
 						<%
-						session.setAttribute("username", "aaa");
 							if (session.getAttribute("username") == null) {
 						%>
 						<a href="./login">登录</a> <a href="./reg">注册</a>
