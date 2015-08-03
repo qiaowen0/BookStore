@@ -25,7 +25,13 @@
 			<result>search_results.jsp</result>
 		</action>
 		<action name="user_logout" class="com.bookstore.action.Logout">
-			<result>reg.jsp</result>
+			<result>index.jsp</result>
+		</action>
+
+
+		<action name="user_login" class="com.bookstore.action.LoginCofirm">
+			<result name="login_fail">Login.jsp</result>
+			<result>index.jsp</result>			
 		</action>
 
 

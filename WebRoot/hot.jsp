@@ -25,7 +25,6 @@
 <meta name="msapplication-TileColor" content="#FFFFFF" />
 <title>图书推荐系统</title>
 </head>
-
 <body>
 	<nav class="navbar navbar-inverse" role="navigation">
 		<div class="container">
@@ -59,7 +58,9 @@
 						</span>
 					</div>
 				</div>
-
+				<%
+					session.setAttribute("isLogin", "default");
+				%>
 
 				<ul class="nav navbar-nav navbar-right navbar_user">
 					<div class="hum">
@@ -69,9 +70,9 @@
 						<a href="./login">登录</a> <a href="./reg">注册</a>
 						<%
 							} else {
-								out.print("<div style=\"color:white\">"
-										+ (String) session.getAttribute("username") + "</div>"
-										+ "<a href=\"./user_logout\">注销</a>");
+								out.print("<a href=\"./profile\">"
+										+ (String) session.getAttribute("username")
+										+ "</a> <a href=\"./user_logout\">注销</a>");
 							}
 						%>
 					</div>

@@ -22,7 +22,6 @@
 
 <title>图书管理系统</title>
 </head>
-
 <body>
 
 	<nav class="navbar navbar-inverse" role="navigation">
@@ -66,6 +65,17 @@
 				</div>
 
 
+
+				<%
+					if (((String) session.getAttribute("isLogin")).equals("Failure")) {
+				%>
+				<script>
+					alert("账户名或者密码错误");
+				</script>
+				<%
+					}
+				%>
+
 				<ul class="nav navbar-nav navbar-right navbar_user">
 					<div class="hum">
 						<%
@@ -74,9 +84,9 @@
 						<a href="./login">登录</a> <a href="./reg">注册</a>
 						<%
 							} else {
-								out.print("<div style=\"color:white\">"
-										+ (String) session.getAttribute("username") + "</div>"
-										+ "<a href=\"./user_logout\">注销</a>");
+								out.print("<a href=\"./profile\">"
+										+ (String) session.getAttribute("username")
+										+ "</a> <a href=\"./user_logout\">注销</a>");
 							}
 						%>
 					</div>
@@ -90,8 +100,7 @@
 
 		<h2 class="text-center" style="padding-top:30px;">登录</h2>
 
-
-		<form class="form-horizontal form-login" role="form">
+		<form class="form-horizontal form-login" name="loginForm" role="form">
 			<div class="form-group">
 				<label for="email" class="col-sm-2 control-label">邮箱</label>
 				<div class="col-sm-10">
@@ -110,7 +119,7 @@
 				<div class="col-sm-offset-2 col-sm-10">
 
 					<button class="btn btn-primary btn-sm" type="button"
-						onclick="javascript:login()">登录</button>
+						onclick="javascript:checkForm()">登录</button>
 
 				</div>
 			</div>
@@ -145,6 +154,22 @@
 		</div>
 	</div>
 
+
+	<Script language="JavaScript">
+		function checkForm() {
+			if (document.loginForm.email.value == "") {
+				alert("请输入邮箱");
+				document.loginForm.email.focus();
+			} else if (document.loginForm.pwd.value == "") {
+				alert("请输入密码");
+				document.loginForm.pwd.focus();
+			} else {
+				document.loginForm.action = "user_login";
+				document.loginForm.method = "POST";
+				document.loginForm.submit();
+			}
+		}
+	</Script>
 
 
 </body>

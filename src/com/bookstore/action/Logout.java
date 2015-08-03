@@ -6,10 +6,11 @@ import java.util.*;
 
 public class Logout extends ActionSupport{
 	public String execute() throws Exception{
-		//È¥µôsession
+		//æ³¨é”€
 		ActionContext context = ActionContext.getContext();
 		Map<String, Object> session = (Map<String, Object>)context.getSession();
 		session.remove("username");
+		session.put("isLogin", "default");
 		return SUCCESS;
 	}
 }
