@@ -20,7 +20,7 @@
 <script src="./resources/js/respond.min.js"></script>
 <script src="./resources/js/subhd2.min.js?1"></script>
 <script src="./resources/js/jquery.tooltipster.min.js"></script>
-<link rel="stylesheet" href="/www/css/tooltipster.css">
+<link rel="stylesheet" href="./resources/css/tooltipster.css">
 <meta name="application-name" content="&nbsp;" />
 <meta name="msapplication-TileColor" content="#FFFFFF" />
 <title>图书推荐系统</title>

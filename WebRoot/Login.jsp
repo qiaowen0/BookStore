@@ -73,6 +73,8 @@
 					alert("账户名或者密码错误");
 				</script>
 				<%
+					} else {
+						session.setAttribute("isLogin", "default");
 					}
 				%>
 
@@ -100,7 +102,7 @@
 
 		<h2 class="text-center" style="padding-top:30px;">登录</h2>
 
-		<form class="form-horizontal form-login" name="loginForm" role="form">
+		<form class="form-horizontal form-login" name="loginForm" role="form" method="POST">
 			<div class="form-group">
 				<label for="email" class="col-sm-2 control-label">邮箱</label>
 				<div class="col-sm-10">
@@ -118,8 +120,8 @@
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
 
-					<button class="btn btn-primary btn-sm" type="button"
-						onclick="javascript:checkForm()">登录</button>
+					<button class="btn btn-primary btn-sm" type="b"
+						onclick="javascript:checkLoginForm()">登录</button>
 
 				</div>
 			</div>
@@ -156,7 +158,7 @@
 
 
 	<Script language="JavaScript">
-		function checkForm() {
+		function checkLoginForm() {
 			if (document.loginForm.email.value == "") {
 				alert("请输入邮箱");
 				document.loginForm.email.focus();
@@ -165,12 +167,9 @@
 				document.loginForm.pwd.focus();
 			} else {
 				document.loginForm.action = "user_login";
-				document.loginForm.method = "POST";
 				document.loginForm.submit();
 			}
 		}
 	</Script>
-
-
 </body>
 </html>

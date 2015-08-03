@@ -21,7 +21,7 @@
 <script src="./resources/js/respond.min.js"></script>
 <script src="./resources/js/subhd2.min.js?1"></script>
 <script src="./resources/js/jquery.tooltipster.min.js"></script>
-<link rel="stylesheet" href="/www/css/tooltipster.css">
+<link rel="stylesheet" href="./resources/css/tooltipster.css">
 <meta name="application-name" content="&nbsp;" />
 <meta name="msapplication-TileColor" content="#FFFFFF" />
 <title>图书推荐系统</title>
@@ -63,7 +63,7 @@
 						</span>
 					</div>
 				</div>
-								<%
+				<%
 					session.setAttribute("isLogin", "default");
 				%>
 
@@ -93,7 +93,7 @@
 
 		<h2 class="text-center" style="padding-top:30px;">图书推荐</h2>
 
-		<form class="form-horizontal form-login" name="regForm" role="form">
+		<form class="form-horizontal form-login" name="regForm" role="form" method ="POST">
 			<div class="form-group">
 				<label for="email" class="col-sm-3 control-label">邮箱</label>
 				<div class="col-sm-9">
@@ -104,7 +104,7 @@
 			<div class="form-group">
 				<label for="name" class="col-sm-3 control-label">昵称</label>
 				<div class="col-sm-9">
-					<input type="text" class="form-control" name="name" id="name"
+					<input type="text" class="form-control" name="nickname" id="name"
 						placeholder="昵称"> <span class="help-block">注册成功后不可更改</span>
 				</div>
 			</div>
@@ -124,8 +124,8 @@
 			</div>
 			<div class="form-group" style="margin-top:50px;">
 				<div class="col-sm-offset-3 col-sm-9">
-					<button class="btn btn-primary btn-sm" style="width:100%;"
-						type="button" id="regb" onclick="javascript:submitReg()">提交注册</button>
+					<button class="btn btn-primary btn-sm" style="width:100%;" name="btnsub"
+						type="button" id="regb" onclick="javascript:checkRegForm()">提交注册</button>
 				</div>
 			</div>
 
@@ -151,5 +151,37 @@
 			</div>
 		</div>
 	</div>
+
+
+
+	<Script language="JavaScript">
+		function checkRegForm() {
+			if (document.regForm.email.value == "") {
+				alert("请输入邮箱");
+				document.regForm.email.focus();
+			}
+			 else if (document.regForm.nickname.value == "") {
+				alert("请输入昵称");
+				document.regForm.nickname.focus();
+			} 
+			else if (document.regForm.pwd.value == "") {
+				alert("请输入密码");
+				document.regForm.pwd.focus();
+			}
+			 else if (document.regForm.pwd2.value == "") {
+				alert("请重复密码");
+				document.regForm.pwd2.focus();
+			} 
+			else {
+				if (document.regForm.pwd.value.equals(document.regForm.pwd2.value)){
+					alert("两次密码不一致！");
+				} 
+				else {
+					document.checkRegForm.action = "user_register";
+					document.checkRegForm.submit();
+				}
+			}
+		}
+	</Script>
 </body>
 </html>

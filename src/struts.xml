@@ -24,14 +24,21 @@
 		<action name="search_results">
 			<result>search_results.jsp</result>
 		</action>
+		<action name="profile">
+			<result>profile.jsp</result>
+		</action>
+		
 		<action name="user_logout" class="com.bookstore.action.Logout">
 			<result>index.jsp</result>
 		</action>
-
-
 		<action name="user_login" class="com.bookstore.action.LoginCofirm">
 			<result name="login_fail">Login.jsp</result>
-			<result>index.jsp</result>			
+			<result>profile.jsp</result>
+		</action>
+
+
+		<action name="user_register" class="com.bookstore.action.User_register">
+			<result>profile.jsp</result>
 		</action>
 
 
