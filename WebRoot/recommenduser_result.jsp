@@ -5,7 +5,7 @@
 			+ request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 %>
-<%@taglib prefix="s" uri="/struts-tags"%>
+
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -49,7 +49,6 @@
 					<li><a href="./Hot">热门</a></li>
 					<li><a href="./Recommend">我要推荐</a></li>
 
-
 				</ul>
 				<div class="navbar-form navbar-left" role="search">
 					<div class="input-group input-group-sm btn-group">
@@ -62,10 +61,10 @@
 						</span>
 					</div>
 				</div>
+
 				<%
 					session.setAttribute("isLogin", "default");
 				%>
-
 				<ul class="nav navbar-nav navbar-right navbar_user">
 					<div class="hum">
 						<%
@@ -85,29 +84,6 @@
 		</div>
 	</nav>
 
-
-
-
-	<table width="800">
-		<tr>
-			<th>书名</th>
-			<th>作者</th>
-			<th>推荐人</th>
-		</tr>
-		<s:iterator value="booklist" var="books" status="st">
-			<tr>
-				<td><a
-					href="./BookDetails?bookid=<s:property value="#books.bookid"/>"><s:property
-							value="#books.bookname" /></a></td>
-				<td><a
-					href="./BookAuthor?bookauthor=<s:property value="#books.bookauthor"/>"><s:property
-							value="#books.bookauthor" /></a></td>
-				<td><a
-					href="./Recommenduser?recommenduser=<s:property value="#books.bookauthor"/>"><s:property
-							value="#books.recommenduser" /></a></td>
-			</tr>
-		</s:iterator>
-	</table>
 
 	<div style="clear:both;margin-bottom:120px;"></div>
 	<div id="footer">

@@ -13,9 +13,6 @@
 		<action name="hot-failure">
 			<result>hot-failure.jsp</result>
 		</action>
-
-
-
 		<action name="New" class="com.bookstore.action.New">
 			<result>new.jsp</result>
 			<result name="failure">new-failure.jsp</result>
@@ -23,11 +20,6 @@
 		<action name="new-failure">
 			<result>new-failure.jsp</result>
 		</action>
-
-
-
-
-
 		<action name="login">
 			<result>Login.jsp</result>
 		</action>
@@ -54,5 +46,12 @@
 			<result name="reg_fail">reg.jsp</result>
 			<result>profile.jsp</result>
 		</action>
+		
+		<action name="BookDetails" class="com.bookstore.action.SearchBookDetails">
+			<result name="failure">bookdetails_result_failure.jsp</result>
+			<result>bookdetails_result.jsp</result>
+		</action>
+
+
 	</package>
 </struts>    

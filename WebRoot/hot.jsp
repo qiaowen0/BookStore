@@ -85,7 +85,7 @@
 
 
 
-	<table width="1200">
+	<table width="800">
 		<tr>
 			<th>书名</th>
 			<th>作者</th>
@@ -93,13 +93,19 @@
 		</tr>
 		<s:iterator value="booklist" var="books" status="st">
 			<tr>
-				<td><a href="?bookid=<s:property value="#books.bookid"/>"><s:property
+				<td><a
+					href="./BookDetails?bookid=<s:property value="#books.bookid"/>"><s:property
 							value="#books.bookname" /></a></td>
-				<td><s:property value="#books.bookauthor" /></td>
-				<td><s:property value="#books.recommenduser" /></td>
+				<td><a
+					href="./BookAuthor?bookauthor=<s:property value="#books.bookauthor"/>"><s:property
+							value="#books.bookauthor" /></a></td>
+				<td><a
+					href="./Recommenduser?recommenduser=<s:property value="#books.bookauthor"/>"><s:property
+							value="#books.recommenduser" /></a></td>
 			</tr>
 		</s:iterator>
 	</table>
+
 
 
 

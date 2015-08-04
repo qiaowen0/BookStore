@@ -1,11 +1,13 @@
 eclipse.preferences.version=1
 encoding//WebRoot/Login.jsp=UTF-8
+encoding//WebRoot/bookdetails_result.jsp=UTF-8
 encoding//WebRoot/index.jsp=UTF-8
 encoding//src/com/bookstore/action/BookDetails.java=UTF-8
 encoding//src/com/bookstore/action/Hot.java=UTF-8
 encoding//src/com/bookstore/action/LoginCofirm.java=UTF-8
 encoding//src/com/bookstore/action/Logout.java=UTF-8
 encoding//src/com/bookstore/action/New.java=UTF-8
+encoding//src/com/bookstore/action/SearchBookDetails.java=UTF-8
 encoding//src/com/bookstore/action/UserRegister.java=UTF-8
 encoding//src/struts.xml=UTF-8
 encoding/readme.txt=UTF-8
