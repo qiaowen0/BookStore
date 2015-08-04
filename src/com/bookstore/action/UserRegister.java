@@ -1,5 +1,4 @@
 package com.bookstore.action;
-
 import java.util.*;
 import java.io.*;
 import java.sql.*;
@@ -21,10 +20,11 @@ public class UserRegister extends ActionSupport {
 		String dbPwd = "12345678";
 		con = java.sql.DriverManager.getConnection(dbUrl, dbUser, dbPwd);
 		stmt = con.createStatement();
-		//这条语句旨在查找是否存在这个记录
+
+
 		String sql = "select * from user where id_email=\"" + email + "\"";
 		rs = stmt.executeQuery(sql);	
-		if(rs.next()==true)//即存在这么个记录，不能作为正确的注册邮箱
+		if(rs.next()==true)//閭閲嶅
 		{
 			ActionContext context = ActionContext.getContext();
 			Map<String, Object> session = (Map<String, Object>) context
@@ -42,7 +42,7 @@ public class UserRegister extends ActionSupport {
 			session.put("isRegeNickSuccess", "Failure");
 			return "reg_fail";
 		}
-		//插入用户
+		//纭鎻掑叆鏁版嵁
 		sql="INSERT INTO user (`id_email`, `nick_name`, `password`) VALUES ('"+email+"', '"+nickname+"', '"+pwd+"');";
 		stmt.executeUpdate(sql);
 		ActionContext context = ActionContext.getContext();
