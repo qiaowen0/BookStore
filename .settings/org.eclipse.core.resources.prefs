@@ -7,6 +7,7 @@ encoding//src/com/bookstore/action/Hot.java=UTF-8
 encoding//src/com/bookstore/action/LoginCofirm.java=UTF-8
 encoding//src/com/bookstore/action/Logout.java=UTF-8
 encoding//src/com/bookstore/action/New.java=UTF-8
+encoding//src/com/bookstore/action/SearchBookAuthor.java=UTF-8
 encoding//src/com/bookstore/action/SearchBookDetails.java=UTF-8
 encoding//src/com/bookstore/action/UserRegister.java=UTF-8
 encoding//src/struts.xml=UTF-8
