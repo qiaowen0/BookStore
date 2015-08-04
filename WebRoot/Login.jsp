@@ -67,14 +67,17 @@
 
 
 				<%
-					if (((String) session.getAttribute("isLogin")).equals("Failure")) {
+					if (session.getAttribute("isLogin") != null) {
+						if (((String) session.getAttribute("isLogin"))
+								.equals("Failure")) {
 				%>
 				<script>
 					alert("账户名或者密码错误");
 				</script>
 				<%
 					} else {
-						session.setAttribute("isLogin", "default");
+							session.setAttribute("isLogin", "default");
+						}
 					}
 				%>
 
@@ -102,7 +105,8 @@
 
 		<h2 class="text-center" style="padding-top:30px;">登录</h2>
 
-		<form class="form-horizontal form-login" name="loginForm" role="form" method="POST">
+		<form class="form-horizontal form-login" name="loginForm" role="form"
+			method="POST">
 			<div class="form-group">
 				<label for="email" class="col-sm-2 control-label">邮箱</label>
 				<div class="col-sm-10">

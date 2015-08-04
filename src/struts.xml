@@ -37,7 +37,7 @@
 
 
 		<action name="User_reg" class="com.bookstore.action.UserRegister">
-		<result name="reg_fail">Login.jsp</result>
+		<result name="reg_fail">reg.jsp</result>
 			<result>profile.jsp</result>
 		</action>
 

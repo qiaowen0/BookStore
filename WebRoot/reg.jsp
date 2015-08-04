@@ -61,7 +61,31 @@
 				<%
 					session.setAttribute("isLogin", "default");
 				%>
-
+				<%
+					if (session.getAttribute("isRegeEmailSuccess") != null) {
+						if (((String) session.getAttribute("isRegeEmailSuccess"))
+								.equals("Failure")) {
+				%>
+				<script>
+					alert("邮箱已存在！");
+				</script>
+				<%
+					} else {
+							session.setAttribute("isRegeEmailSuccess", "default");
+						}
+					}
+					if (session.getAttribute("isRegeNickSuccess") != null) {
+						if (session.getAttribute("isRegeNickSuccess").equals("Failure")) {
+				%>
+				<script>
+					alert("昵称已存在！！");
+				</script>
+				<%
+					} else {
+							session.setAttribute("isRegeNickSuccess", "default");
+						}
+					}
+				%>
 				<ul class="nav navbar-nav navbar-right navbar_user">
 					<div class="hum">
 						<%
