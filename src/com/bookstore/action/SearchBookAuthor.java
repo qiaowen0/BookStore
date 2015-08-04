@@ -20,9 +20,9 @@ public class SearchBookAuthor extends ActionSupport {
 	public void setBooklist(List<BookDetails> booklist) {
 		this.booklist = booklist;
 	}
-	
+
 	private String bookauthor;
-	
+
 	public String getBookauthor() {
 		return bookauthor;
 	}
@@ -42,19 +42,20 @@ public class SearchBookAuthor extends ActionSupport {
 		String dbPwd = "12345678";
 		con = java.sql.DriverManager.getConnection(dbUrl, dbUser, dbPwd);
 		stmt = con.createStatement();
-		String sql = "SELECT count(*) FROM booktable where BookAuthor=\""+bookauthor+"\";";
+		String sql = "SELECT count(*) FROM booktable where BookAuthor=\""
+				+ bookauthor + "\";";
 		rs = stmt.executeQuery(sql);
 		rs.next();
-		String ColSum=rs.getString(1);
-		int colsum=Integer.parseInt(ColSum);
-		
-		sql = "SELECT * FROM booktable where BookAuthor=\""+bookauthor+"\";";
+		String ColSum = rs.getString(1);
+		int colsum = Integer.parseInt(ColSum);
+
+		sql = "SELECT * FROM booktable where BookAuthor=\"" + bookauthor
+				+ "\";";
 		rs = stmt.executeQuery(sql);
 		rs.next();
-		//这里是否要先next？
-		for(int i=0;i<colsum;i++)
-		{
-			BookDetails bookdetails=new BookDetails();
+		// 这里是否要先next？
+		for (int i = 0; i < colsum; i++) {
+			BookDetails bookdetails = new BookDetails();
 			bookdetails.setBookid(rs.getInt(1));
 			bookdetails.setBookname(rs.getString(2));
 			bookdetails.setBookauthor(rs.getString(3));
@@ -62,8 +63,8 @@ public class SearchBookAuthor extends ActionSupport {
 			rs.next();
 			booklist.add(bookdetails);
 		}
-		
-		return SUCCESS;		
+
+		return SUCCESS;
 	}
 
 }
