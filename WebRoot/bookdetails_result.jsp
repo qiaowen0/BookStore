@@ -93,9 +93,6 @@
 	width:auto;
 	height:auto
 	" />
-
-
-
 	<table width="800">
 		<tr>
 			<th>书名</th>
@@ -111,7 +108,6 @@
 		</tr>
 	</table>
 	<BR><BR>
-	
 	<span style="font-weight:bold;">推荐理由：</span>
 	${bookdetails.comment}
 
