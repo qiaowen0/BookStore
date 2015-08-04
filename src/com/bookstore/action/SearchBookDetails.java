@@ -37,19 +37,16 @@ public class SearchBookDetails extends ActionSupport {
 		String sql = "SELECT * FROM booktable where BookId="+bookid+";";
 		rs = stmt.executeQuery(sql);
 		rs.next();
-		
 		bookdetails.setBookid(rs.getInt(1));
 		bookdetails.setBookname(rs.getString(2));
 		bookdetails.setBookauthor(rs.getString(3));
 		bookdetails.setRecommenduser(rs.getString(4));
 		bookdetails.setComment(rs.getString(5));
 		bookdetails.setImgname(rs.getString(6));
+		sql="update booktable set `searchTimes`=`searchTimes`+1 where BookId="+bookid+";";
+		stmt.executeUpdate(sql);
 		return SUCCESS;
 	}
-	
-	
-	
-	
 	private String bookid;
 	public String getBookid() {
 		return bookid;
