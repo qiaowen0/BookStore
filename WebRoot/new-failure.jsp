@@ -1,5 +1,12 @@
-<!DOCTYPE html>
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+%>
+
+<!DOCTYPE html>
 <html lang="zh-cn">
 <head>
 <meta charset="utf-8">
@@ -14,16 +21,12 @@
 <script src="./resources/js/subhd2.min.js?1"></script>
 <script src="./resources/js/jquery.tooltipster.min.js"></script>
 <link rel="stylesheet" href="./resources/css/tooltipster.css">
-
-
-
 <meta name="application-name" content="&nbsp;" />
 <meta name="msapplication-TileColor" content="#FFFFFF" />
-
-<title>图书管理系统</title>
+<title>图书推荐系统</title>
 </head>
-<body>
 
+<body>
 	<nav class="navbar navbar-inverse" role="navigation">
 		<div class="container">
 			<!-- Brand and toggle get grouped for better mobile display -->
@@ -45,13 +48,8 @@
 					<li><a href="./New">最新</a></li>
 					<li><a href="./Hot">热门</a></li>
 					<li><a href="./Recommend">我要推荐</a></li>
-				</ul>
 
 				</ul>
-
-
-
-
 				<div class="navbar-form navbar-left" role="search">
 					<div class="input-group input-group-sm btn-group">
 						<input type="text" class="form-control" style="width:180px"
@@ -64,23 +62,9 @@
 					</div>
 				</div>
 
-
-
 				<%
-					if (session.getAttribute("isLogin") != null) {
-						if (((String) session.getAttribute("isLogin"))
-								.equals("Failure")) {
+					session.setAttribute("isLogin", "default");
 				%>
-				<script>
-					alert("账户名或者密码错误");
-				</script>
-				<%
-					} else {
-							session.setAttribute("isLogin", "default");
-						}
-					}
-				%>
-
 				<ul class="nav navbar-nav navbar-right navbar_user">
 					<div class="hum">
 						<%
@@ -99,54 +83,13 @@
 			</div>
 		</div>
 	</nav>
-
-
-	<div class="container">
-
-		<h2 class="text-center" style="padding-top:30px;">登录</h2>
-
-		<form class="form-horizontal form-login" name="loginForm" role="form"
-			method="POST">
-			<div class="form-group">
-				<label for="email" class="col-sm-2 control-label">邮箱</label>
-				<div class="col-sm-10">
-					<input type="email" class="form-control" name="email" id="email"
-						placeholder="登录邮箱地址">
-				</div>
-			</div>
-			<div class="form-group">
-				<label for="pwd" class="col-sm-2 control-label">密码</label>
-				<div class="col-sm-10">
-					<input type="password" class="form-control" id="pwd" name="pwd"
-						id="pwd" placeholder="登录密码">
-				</div>
-			</div>
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-
-					<button class="btn btn-primary btn-sm" type="b"
-						onclick="javascript:checkLoginForm()">登录</button>
-
-				</div>
-			</div>
-			<div class="form-group" style="padding-top:20px;">
-				<div class="col-sm-offset-2 col-sm-10">
-					<p>
-						<a href="./reg">没有账号？注册一个</a>
-					</p>
-					<p>
-						<a href="mailto:qiaowen0@live.com">忘记密码？请发邮件给我。</a>
-					</p>
-				</div>
-			</div>
-		</form>
-
-	</div>
+	<script>
+		alert("数据不足，不能查找最新图书！");
+		window.location.href = "./"
+	</script>
 
 
 	<div style="clear:both;margin-bottom:120px;"></div>
-
-
 	<div id="footer">
 		<div class="container">
 			<div class="row">
@@ -159,21 +102,5 @@
 			</div>
 		</div>
 	</div>
-
-
-	<Script language="JavaScript">
-		function checkLoginForm() {
-			if (document.loginForm.email.value == "") {
-				alert("请输入邮箱");
-				document.loginForm.email.focus();
-			} else if (document.loginForm.pwd.value == "") {
-				alert("请输入密码");
-				document.loginForm.pwd.focus();
-			} else {
-				document.loginForm.action = "./user_login";
-				document.loginForm.submit();
-			}
-		}
-	</Script>
 </body>
 </html>

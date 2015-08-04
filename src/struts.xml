@@ -6,16 +6,32 @@
 		<action name="index">
 			<result>index.jsp</result>
 		</action>
-		<action name="hot">
+		<action name="Hot" class="com.bookstore.action.Hot">
 			<result>hot.jsp</result>
+			<result name="failure">hot-failure.jsp</result>
 		</action>
+		<action name="hot-failure">
+			<result>hot-failure.jsp</result>
+		</action>
+
+
+
+		<action name="New" class="com.bookstore.action.New">
+			<result>new.jsp</result>
+			<result name="failure">new-failure.jsp</result>
+		</action>
+		<action name="new-failure">
+			<result>new-failure.jsp</result>
+		</action>
+
+
+
+
+
 		<action name="login">
 			<result>Login.jsp</result>
 		</action>
-		<action name="new">
-			<result>new.jsp</result>
-		</action>
-		<action name="recommend">
+		<action name="Recommend">
 			<result>recommend.jsp</result>
 		</action>
 		<action name="reg">
@@ -34,13 +50,9 @@
 			<result name="login_fail">Login.jsp</result>
 			<result>profile.jsp</result>
 		</action>
-
-
 		<action name="User_reg" class="com.bookstore.action.UserRegister">
-		<result name="reg_fail">reg.jsp</result>
+			<result name="reg_fail">reg.jsp</result>
 			<result>profile.jsp</result>
 		</action>
-
-
 	</package>
 </struts>    

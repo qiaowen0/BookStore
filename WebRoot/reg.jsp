@@ -42,9 +42,9 @@
 				<ul class="nav navbar-nav">
 
 					<li class="active"><a href="./">首页</a></li>
-					<li><a href="./new">最新</a></li>
-					<li><a href="./hot">热门</a></li>
-					<li><a href="./recommend">我要推荐</a></li>
+					<li><a href="./New">最新</a></li>
+					<li><a href="./Hot">热门</a></li>
+					<li><a href="./Recommend">我要推荐</a></li>
 
 				</ul>
 				<div class="navbar-form navbar-left" role="search">
