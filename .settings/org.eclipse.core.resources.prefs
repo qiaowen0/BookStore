@@ -3,5 +3,6 @@ encoding//WebRoot/Login.jsp=UTF-8
 encoding//WebRoot/index.jsp=UTF-8
 encoding//src/com/bookstore/action/LoginCofirm.java=UTF-8
 encoding//src/com/bookstore/action/Logout.java=UTF-8
+encoding//src/com/bookstore/action/UserRegister.java=UTF-8
 encoding//src/struts.xml=UTF-8
 encoding/readme.txt=UTF-8
