@@ -86,6 +86,8 @@
 	</nav>
 
 
+	<span style="font-weight:bold;">依作者查找：</span>
+	<BR><BR>
 	<table width="800">
 		<tr>
 			<th>书名</th>

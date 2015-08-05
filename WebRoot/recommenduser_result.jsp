@@ -85,6 +85,8 @@
 		</div>
 	</nav>
 	
+	<span style="font-weight:bold;">依推荐人查找：</span>
+	<BR><BR>
 		<table width="800">
 		<tr>
 			<th>书名</th>
