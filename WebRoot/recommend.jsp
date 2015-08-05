@@ -5,6 +5,7 @@
 			+ request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 %>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 
 <!DOCTYPE html>
 <html lang="zh-cn">
@@ -85,6 +86,73 @@
 			</div>
 		</div>
 	</nav>
+
+	<%
+		if (session.getAttribute("username") == null) {
+	%>
+	<script>
+		alert("请先登录！");
+		window.location = "./login";
+	</script>
+	<%
+		}
+	%>
+
+
+	<div class="container">
+
+
+		<h2 class="text-center" style="padding-top:30px;">推荐图书</h2>
+
+		<form class="form-horizontal form-login" name="RecommendForm"
+			role="form" action="RecommendNewBook" method="POST"
+			id="recformtosubmit" enctype="multipart/form-data">
+			<div class="form-group">
+				<label class="col-sm-3 control-label">书名</label>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" name="bookname"
+						id="bookname" placeholder="书名"> <span class="help-block">请尽量输入完整的书名</span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">作者</label>
+				<div class="col-sm-9">
+					<input type="text" class="form-control" name="bookauthor"
+						id="bookauthor" placeholder="作者">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-3 control-label">推荐理由</label>
+				<div class="col-sm-9">
+					<input type="text" class="form-control"
+						id="comment" name="comment" placeholder="推荐理由">
+				</div>
+			</div>
+			
+			
+			<div class="form-group">
+				<label class="col-sm-3 control-label">书籍封面</label>
+				<div class="col-sm-9">
+					<input type="file" name="upload"/><span class="help-block">仅支持jpg/png格式</span>
+				</div>
+			</div>
+			
+			
+			<div class="form-group" style="margin-top:50px;">
+				<div class="col-sm-offset-3 col-sm-9">
+					<button class="btn btn-primary btn-sm" style="width:100%;"
+						name="btnsub" type="submit" id="recommendb">提交录入</button>
+				</div>
+			</div>
+
+		</form>
+
+	</div>
+
+
+
+
+
 
 
 	<div style="clear:both;margin-bottom:120px;"></div>
