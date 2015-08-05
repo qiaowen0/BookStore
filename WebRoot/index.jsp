@@ -91,18 +91,23 @@
 			<h1 style="padding-top:100px;color:white;">图书推荐</h1>
 		</div>
 
-		<div class="input-group btn-group"
-			style="width:530px;margin:0 auto;padding-top:50px;">
-			<input type="text" class="form-control dropdown-toggle" id="sn"
-				style="height:42px;" placeholder="图书名称">
-			<ul class="dropdown-menu dropdown-menu-search" role="menu">
-			</ul>
 
-			<span class="input-group-btn">
-				<button type="button" class="btn btn-default" id="searchbutton"
-					style="height:42px;" onclick="javascript:search()">搜索图书</button>
-			</span>
-		</div>
+		<form action="SearchBook" name="SearchindexForm" method="POST">
+			<div class="input-group btn-group"
+				style="width:530px;margin:0 auto;padding-top:50px;">
+				<input type="text" name="searchitem"
+					class="form-control dropdown-toggle" id="sn" style="height:42px;"
+					placeholder="图书名称">
+				<ul class="dropdown-menu dropdown-menu-search" role="menu">
+				</ul>
+				<span class="input-group-btn">
+					<button type="submit" class="btn btn-default" id="searchbutton"
+						style="height:42px;">搜索图书</button>
+				</span>
+			</div>
+		</form>
+
+
 
 		<div class="text-center f12" style="color:#ddd;padding:10px 0 0 0;}">
 			<span

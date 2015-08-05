@@ -51,17 +51,19 @@
 
 
 				</ul>
-				<div class="navbar-form navbar-left" role="search">
-					<div class="input-group input-group-sm btn-group">
-						<input type="text" class="form-control" style="width:180px"
-							id="sn" placeholder="图书名称">
-						<ul class="dropdown-menu dropdown-menu-search2" role="menu"></ul>
-						<span class="input-group-btn">
-							<button type="button" class="btn btn-default btn-sm"
-								id="searchbutton" onclick="javascript:search()">搜索图书</button>
-						</span>
+								<form action="SearchBook" name="SearchrowForm" method="POST">
+					<div class="navbar-form navbar-left" role="search">
+						<div class="input-group input-group-sm btn-group">
+							<input type="text" name="searchitem" class="form-control"
+								style="width:180px" id="sn" placeholder="图书名称">
+							<ul class="dropdown-menu dropdown-menu-search2" role="menu"></ul>
+							<span class="input-group-btn">
+								<button type="submit" class="btn btn-default btn-sm"
+									id="searchbutton">搜索图书</button>
+							</span>
+						</div>
 					</div>
-				</div>
+				</form>
 				<%
 					session.setAttribute("isLogin", "default");
 				%>

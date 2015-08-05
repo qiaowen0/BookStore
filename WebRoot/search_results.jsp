@@ -5,6 +5,7 @@
 			+ request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 %>
+<%@taglib prefix="s" uri="/struts-tags"%>
 
 <!DOCTYPE html>
 <html lang="zh-cn">
@@ -50,17 +51,19 @@
 					<li><a href="./Recommend">我要推荐</a></li>
 
 				</ul>
-				<div class="navbar-form navbar-left" role="search">
-					<div class="input-group input-group-sm btn-group">
-						<input type="text" class="form-control" style="width:180px"
-							id="sn" placeholder="图书名称">
-						<ul class="dropdown-menu dropdown-menu-search2" role="menu"></ul>
-						<span class="input-group-btn">
-							<button type="button" class="btn btn-default btn-sm"
-								id="searchbutton" onclick="javascript:search()">搜索图书</button>
-						</span>
+				<form action="SearchBook" name="SearchrowForm" method="POST">
+					<div class="navbar-form navbar-left" role="search">
+						<div class="input-group input-group-sm btn-group">
+							<input type="text" name="searchitem" class="form-control"
+								style="width:180px" id="sn" placeholder="图书名称">
+							<ul class="dropdown-menu dropdown-menu-search2" role="menu"></ul>
+							<span class="input-group-btn">
+								<button type="submit" class="btn btn-default btn-sm"
+									id="searchbutton">搜索图书</button>
+							</span>
+						</div>
 					</div>
-				</div>
+				</form>
 
 				<%
 					session.setAttribute("isLogin", "default");
@@ -84,6 +87,30 @@
 		</div>
 	</nav>
 
+
+	<span style="font-weight:bold;">查找结果：</span>
+	<BR>
+	<BR>
+	<table width="800">
+		<tr>
+			<th>书名</th>
+			<th>作者</th>
+			<th>推荐人</th>
+		</tr>
+		<s:iterator value="booklist" var="books" status="st">
+			<tr>
+				<td><a
+					href="./BookDetails?bookid=<s:property value="#books.bookid"/>"><s:property
+							value="#books.bookname" /></a></td>
+				<td><a
+					href="./BookAuthor?bookauthor=<s:property value="#books.bookauthor"/>"><s:property
+							value="#books.bookauthor" /></a></td>
+				<td><a
+					href="./Recommenduser?recommenduser=<s:property value="#books.recommenduser"/>"><s:property
+							value="#books.recommenduser" /></a></td>
+			</tr>
+		</s:iterator>
+	</table>
 
 	<div style="clear:both;margin-bottom:120px;"></div>
 	<div id="footer">

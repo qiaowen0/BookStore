@@ -56,6 +56,10 @@
 		<action name="Recommenduser" class="com.bookstore.action.SearchRecommenduser">
 			<result>recommenduser_result.jsp</result>
 		</action>
+		
+		<action name="SearchBook" class="com.bookstore.action.Searchbooks">
+		<result>search_results.jsp</result>
+		</action>
 
 
 	</package>
