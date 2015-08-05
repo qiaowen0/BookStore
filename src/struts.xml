@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
-	<constant name="struts.multipart.saveDir" value="e:\\temp1"></constant>
 	<constant name="struts.multipart.maxSize" value="102400"></constant>
 	<constant name="struts.custom.i18n.resources" value="ApplicationResources"></constant>
 	<package name="default" extends="struts-default">
@@ -64,7 +63,6 @@
 		</action>
 
 
-
 		<action name="RecommendNewBook" class="com.bookstore.action.RecommendNewBookAction">
 			<interceptor-ref name="defaultStack">
 				<!-- 设置Action能接受的文件的最大长度，而不是对上传文件的最大长度进行限制。 (因为在Action处理之前，文件已经上传到服务器了。) -->
@@ -74,8 +72,8 @@
 				</param>
 			</interceptor-ref>
 			<result>recommend_success.jsp</result>
+			<param name="uploadDir">/images/upload</param>
 		</action>
-		
 
 
 	</package>
