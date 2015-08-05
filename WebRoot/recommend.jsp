@@ -62,7 +62,7 @@
 					</div>
 				</div>
 
-								<%
+				<%
 					session.setAttribute("isLogin", "default");
 				%>
 				<ul class="nav navbar-nav navbar-right navbar_user">

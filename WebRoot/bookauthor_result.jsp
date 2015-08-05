@@ -101,7 +101,7 @@
 					href="./BookAuthor?bookauthor=<s:property value="#books.bookauthor"/>"><s:property
 							value="#books.bookauthor" /></a></td>
 				<td><a
-					href="./Recommenduser?recommenduser=<s:property value="#books.bookauthor"/>"><s:property
+					href="./Recommenduser?recommenduser=<s:property value="#books.recommenduser"/>"><s:property
 							value="#books.recommenduser" /></a></td>
 			</tr>
 		</s:iterator>
