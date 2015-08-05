@@ -95,18 +95,12 @@
 			style="width:530px;margin:0 auto;padding-top:50px;">
 			<input type="text" class="form-control dropdown-toggle" id="sn"
 				style="height:42px;" placeholder="图书名称">
-
 			<ul class="dropdown-menu dropdown-menu-search" role="menu">
 			</ul>
 
 			<span class="input-group-btn">
-
-
-
 				<button type="button" class="btn btn-default" id="searchbutton"
 					style="height:42px;" onclick="javascript:search()">搜索图书</button>
-
-
 			</span>
 		</div>
 
