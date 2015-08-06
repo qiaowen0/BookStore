@@ -51,6 +51,7 @@
 					<li><a href="./Recommend">我要推荐</a></li>
 
 				</ul>
+
 				<form action="SearchBook" name="SearchrowForm" method="POST">
 					<div class="navbar-form navbar-left" role="search">
 						<div class="input-group input-group-sm btn-group">
@@ -86,31 +87,13 @@
 			</div>
 		</div>
 	</nav>
-		<table width="800">
-		<tr>
-			<th>书名</th>
-			<th>操作</th>
-		</tr>
-		<s:iterator value="booklist" var="books" status="st">
-			<tr>
-				<td><a
-					href="./BookDetails?bookid=<s:property value="#books.bookid"/>"><s:property
-							value="#books.bookname" /></a></td>
-				<td><a
-					href="./edit?bookid=<s:property value="#books.bookid"/>">修改</a></td>
-			</tr>
-		</s:iterator>
-	</table>
-	
-	
-	
+
+				<script>
+					alert("输入非法或文件过大！");
+					window.location="./profile"
+				</script>
+
 	<div style="clear:both;margin-bottom:120px;"></div>
-	
-	
-	
-	
-	
-	
 	<div id="footer">
 		<div class="container">
 			<div class="row">

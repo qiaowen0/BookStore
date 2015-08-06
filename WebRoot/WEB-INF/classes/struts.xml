@@ -71,5 +71,21 @@
 		<action name="profile" class="com.bookstore.action.Profileaction">
 			<result>Profile.jsp</result>
 		</action>
+
+		<action name="edit" class="com.bookstore.action.EditAction_put">
+			<result>EditPage.jsp</result>
+		</action>
+
+		<action name="confirmEdit" class="com.bookstore.action.ConfirmEditAction">
+			<interceptor-ref name="defaultStack">
+				<param name="fileUpload.allowedTypes">
+					image/jpeg,image/pjpeg,image/x-png,image/png
+				</param>
+			</interceptor-ref>
+			<result>EditPage_success.jsp</result>
+			<result name="input">EditPage_failure.jsp</result>
+			<param name="uploadDir">/images/upload</param>
+		</action>
+
 	</package>
 </struts>    

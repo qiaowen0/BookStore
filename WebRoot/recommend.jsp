@@ -44,12 +44,10 @@
 			<div class="collapse navbar-collapse"
 				id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-
 					<li class="active"><a href="./">首页</a></li>
 					<li><a href="./New">最新</a></li>
 					<li><a href="./Hot">热门</a></li>
 					<li><a href="./Recommend">我要推荐</a></li>
-
 				</ul>
 				<form action="SearchBook" name="SearchrowForm" method="POST">
 					<div class="navbar-form navbar-left" role="search">
@@ -99,11 +97,10 @@
 	%>
 
 
+
+
 	<div class="container">
-
-
 		<h2 class="text-center" style="padding-top:30px;">推荐图书</h2>
-
 		<form class="form-horizontal form-login" name="RecommendForm"
 			role="form" action="RecommendNewBook" method="POST"
 			id="recformtosubmit" enctype="multipart/form-data">
@@ -121,7 +118,6 @@
 						id="bookauthor" placeholder="作者">
 				</div>
 			</div>
-
 			<div class="form-group">
 				<label class="col-sm-3 control-label">推荐理由</label>
 				<div class="col-sm-9">
@@ -129,16 +125,12 @@
 					<span class="help-block">请不要使用半角符号!</span>
 				</div>
 			</div>
-
-
 			<div class="form-group">
 				<label class="col-sm-3 control-label">书籍封面</label>
 				<div class="col-sm-9">
 					<input type="file" name="upload" /><span class="help-block">仅支持jpg/png格式，文件大小不超过2M</span>
 				</div>
 			</div>
-
-
 			<div class="form-group" style="margin-top:50px;">
 				<div class="col-sm-offset-3 col-sm-9">
 					<button class="btn btn-primary btn-sm" style="width:100%;"
@@ -146,10 +138,10 @@
 						onclick="javascript:checkPicture()">提交录入</button>
 				</div>
 			</div>
-
 		</form>
-
 	</div>
+	
+	
 	<div style="clear:both;margin-bottom:120px;"></div>
 	<div id="footer">
 		<div class="container">

@@ -1,55 +1,29 @@
 package com.bookstore.action;
 
-import java.util.*;
-import java.io.*;
-import java.sql.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.ServletActionContext;
 
-import com.mysql.jdbc.Driver;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class RecommendNewBookAction extends ActionSupport {
+public class ConfirmEditAction extends ActionSupport {
+
 	private static final long serialVersionUID = 1L;
 
 	// 代表上传文件的File对象
 	private File upload;
-	// 上传文件名
-	private String uploadFileName;
-	// 上传文件的MIME类型
-	private String uploadContentType;
-	// 保存上传文件的目录，相对于WEB应用程序的根路径，在struts.xml中配置
-	private String uploadDir;
-	
-	private String bookname;
-	private String bookauthor;
-	private String comment;
-
-	public String getBookname() {
-		return bookname;
-	}
-
-	public void setBookname(String bookname) {
-		this.bookname = bookname;
-	}
-
-	public String getBookauthor() {
-		return bookauthor;
-	}
-
-	public void setBookauthor(String bookauthor) {
-		this.bookauthor = bookauthor;
-	}
-
-	public String getComment() {
-		return comment;
-	}
-
-	public void setComment(String comment) {
-		this.comment = comment;
-	}
 
 	public File getUpload() {
 		return upload;
@@ -83,8 +57,52 @@ public class RecommendNewBookAction extends ActionSupport {
 		this.uploadDir = uploadDir;
 	}
 
-	@Override
+	public String getBookid() {
+		return bookid;
+	}
+
+	public void setBookid(String bookid) {
+		this.bookid = bookid;
+	}
+
+	public String getBookname() {
+		return bookname;
+	}
+
+	public void setBookname(String bookname) {
+		this.bookname = bookname;
+	}
+
+	public String getBookauthor() {
+		return bookauthor;
+	}
+
+	public void setBookauthor(String bookauthor) {
+		this.bookauthor = bookauthor;
+	}
+
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+
+	// 上传文件名
+	private String uploadFileName;
+	// 上传文件的MIME类型
+	private String uploadContentType;
+	// 保存上传文件的目录，相对于WEB应用程序的根路径，在struts.xml中配置
+	private String uploadDir;
+
+	private String bookid;
+	private String bookname;
+	private String bookauthor;
+	private String comment;
+
 	public String execute() throws Exception {
+
 		// 先处理图片，最后得到正式的文件名
 
 		String newFileName = null;
@@ -118,12 +136,12 @@ public class RecommendNewBookAction extends ActionSupport {
 		}
 		is.close();
 		os.close();
-
-		//得到当前用户名
+		// 得到当前用户名
 		ActionContext context = ActionContext.getContext();
-		Map<String, Object> session = (Map<String, Object>)context.getSession();
-		String username=(String) session.get("username");
-		
+		Map<String, Object> session = (Map<String, Object>) context
+				.getSession();
+		String username = (String) session.get("username");
+
 		// 下面先连上数据库再说
 		Connection con;
 		Statement stmt;
@@ -135,11 +153,14 @@ public class RecommendNewBookAction extends ActionSupport {
 		String dbPwd = "12345678";
 		con = java.sql.DriverManager.getConnection(dbUrl, dbUser, dbPwd);
 		stmt = con.createStatement();
-		String sql = "INSERT INTO booktable (`Bookname`, `BookAuthor`, `RecommendUser`,`Comment`,`imgName`) VALUES ('"
-				+ bookname + "', '" + bookauthor + "', '" + username + "', '"+comment+"', '"+newFileName+"');";
-		stmt.executeUpdate(sql);
+
+		String sql = "UPDATE booktable SET `Bookname`='" + bookname
+				+ "', `BookAuthor`='" + bookauthor + "', `RecommendUser`='"
+				+ username + "', `Comment`='" + comment + "', `imgName`='"
+				+ newFileName + "' WHERE `BookId`='" + bookid + "';";
 		
+		stmt.executeUpdate(sql);
+
 		return SUCCESS;
 	}
-
 }
