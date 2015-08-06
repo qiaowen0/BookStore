@@ -112,7 +112,7 @@
 
 	<div class="container">
 
-		<h2 class="text-center" style="padding-top:30px;">图书推荐</h2>
+		<h2 class="text-center" style="padding-top:30px;">注册</h2>
 
 		<form class="form-horizontal form-login" name="regForm" role="form"
 			action="User_reg" method="POST" id="regformtosubmit">
