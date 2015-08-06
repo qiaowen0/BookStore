@@ -5,6 +5,7 @@
 			+ request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 %>
+<%@taglib prefix="s" uri="/struts-tags"%>
 
 <!DOCTYPE html>
 <html lang="zh-cn">
@@ -85,9 +86,31 @@
 			</div>
 		</div>
 	</nav>
-
-
+		<table width="800">
+		<tr>
+			<th>书名</th>
+			<th>操作</th>
+		</tr>
+		<s:iterator value="booklist" var="books" status="st">
+			<tr>
+				<td><a
+					href="./BookDetails?bookid=<s:property value="#books.bookid"/>"><s:property
+							value="#books.bookname" /></a></td>
+				<td><a
+					href="./editr?bookid=<s:property value="#books.bookid"/>">修改</a></td>
+			</tr>
+		</s:iterator>
+	</table>
+	
+	
+	
 	<div style="clear:both;margin-bottom:120px;"></div>
+	
+	
+	
+	
+	
+	
 	<div id="footer">
 		<div class="container">
 			<div class="row">
