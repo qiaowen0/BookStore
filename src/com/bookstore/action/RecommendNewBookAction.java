@@ -22,6 +22,33 @@ public class RecommendNewBookAction extends ActionSupport {
 	private String uploadContentType;
 	// 保存上传文件的目录，相对于WEB应用程序的根路径，在struts.xml中配置
 	private String uploadDir;
+	private String bookname;
+	private String bookauthor;
+	private String comment;
+
+	public String getBookname() {
+		return bookname;
+	}
+
+	public void setBookname(String bookname) {
+		this.bookname = bookname;
+	}
+
+	public String getBookauthor() {
+		return bookauthor;
+	}
+
+	public void setBookauthor(String bookauthor) {
+		this.bookauthor = bookauthor;
+	}
+
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
 
 	public File getUpload() {
 		return upload;
@@ -54,7 +81,7 @@ public class RecommendNewBookAction extends ActionSupport {
 	public void setUploadDir(String uploadDir) {
 		this.uploadDir = uploadDir;
 	}
-	
+
 	@Override
 	public String execute() throws Exception {
 		// 先处理图片，最后得到正式的文件名
@@ -90,8 +117,12 @@ public class RecommendNewBookAction extends ActionSupport {
 		}
 		is.close();
 		os.close();
-		
 
+		//得到当前用户名
+		ActionContext context = ActionContext.getContext();
+		Map<String, Object> session = (Map<String, Object>)context.getSession();
+		String username=(String) session.get("username");
+		
 		// 下面先连上数据库再说
 		Connection con;
 		Statement stmt;
@@ -103,10 +134,11 @@ public class RecommendNewBookAction extends ActionSupport {
 		String dbPwd = "12345678";
 		con = java.sql.DriverManager.getConnection(dbUrl, dbUser, dbPwd);
 		stmt = con.createStatement();
-
+		String sql = "INSERT INTO booktable (`Bookname`, `BookAuthor`, `RecommendUser`,`Comment`,`imgName`) VALUES ('"
+				+ bookname + "', '" + bookauthor + "', '" + username + "', '"+comment+"', '"+newFileName+"');";
+		stmt.executeUpdate(sql);
+		
 		return SUCCESS;
 	}
-
-
 
 }

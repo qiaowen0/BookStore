@@ -90,7 +90,7 @@
 	
 	<script>
 		alert("添加成功");
-		window.location="./";
+		window.location="./profile";
 	</script>
 
 	<div style="clear:both;margin-bottom:120px;"></div>
