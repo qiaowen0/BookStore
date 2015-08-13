@@ -1,0 +1,19 @@
+数据库
+用户名：BookStore
+数据库名称：bookstoredb
+密码：12345678
+
+用户表：user
+	id_email	VARCHAR(100)
+	nick_name	VARCHAR(100)
+	password	VARCHAR(100)
+
+
+书籍表名：booktable
+	Bookid:INT(11),,PK,AI	主键，唯一值，自动增长
+	Bookname:VARCHAR(100)	书名
+	BookAuthor:VARCHAR(100)	书籍作者
+	RecommendUser:VARCHAR(100)	推荐人
+	Comment:LONGTEXT	推荐理由
+	imgName:VARCHAR(100) default'0.jpg'	图片存储名称
+	searchTimes:INT(11) default'0'	被查找次数
